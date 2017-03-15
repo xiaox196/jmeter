@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.9" jmeter="3.0 r1743807">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="AutoTest" enabled="true">
+      <stringProp name="TestPlan.comments">jroket2</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="mobile" elementType="Argument">
+            <stringProp name="Argument.name">mobile</stringProp>
+            <stringProp name="Argument.value">${__MobileGenerator}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="X-App-Version" elementType="Argument">
+            <stringProp name="Argument.name">X-App-Version</stringProp>
+            <stringProp name="Argument.value">4.3</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="X-Source-Id" elementType="Argument">
+            <stringProp name="Argument.name">X-Source-Id</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="picture" elementType="Argument">
+            <stringProp name="Argument.name">picture</stringProp>
+            <stringProp name="Argument.value">C:\Users\john\Pictures\Saved Pictures\employment_proof.jpeg</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="path_v3_documents" elementType="Argument">
+            <stringProp name="Argument.name">path_v3_documents</stringProp>
+            <stringProp name="Argument.value">/jrocket2/api/v3/documents</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="port_wedefend" elementType="Argument">
+            <stringProp name="Argument.name">port_wedefend</stringProp>
+            <stringProp name="Argument.value">49030</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="server_wedefend" elementType="Argument">
+            <stringProp name="Argument.name">server_wedefend</stringProp>
+            <stringProp name="Argument.value">xtools.wolaidai.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="X-Product-Code" elementType="Argument">
+            <stringProp name="Argument.name">X-Product-Code</stringProp>
+            <stringProp name="Argument.value">WLD</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="X-User-Identity" elementType="Argument">
+            <stringProp name="Argument.name">X-User-Identity</stringProp>
+            <stringProp name="Argument.value">2</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+    </TestPlan>
+    <hashTree>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="rocket2_integration_messages_lender" enabled="true">
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="checkQuery">Select 1</stringProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="dataSource">Pool1</stringProp>
+        <stringProp name="dbUrl">jdbc:postgresql://192.168.105.13/rocket2_integration_messages_lender</stringProp>
+        <stringProp name="driver">org.postgresql.Driver</stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="password">WFibN3ZzdY8NWplz</stringProp>
+        <stringProp name="poolMax">10</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <stringProp name="username">john</stringProp>
+        <stringProp name="TestPlan.comments">postgresql</stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="rocket2_integration_lender" enabled="true">
+        <stringProp name="TestPlan.comments">postgres</stringProp>
+        <stringProp name="dataSource">pool2</stringProp>
+        <stringProp name="poolMax">10</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="checkQuery">Select 1</stringProp>
+        <stringProp name="dbUrl">jdbc:postgresql://192.168.105.13/rocket2_integration_lender</stringProp>
+        <stringProp name="driver">org.postgresql.Driver</stringProp>
+        <stringProp name="username">john</stringProp>
+        <stringProp name="password">WFibN3ZzdY8NWplz</stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">igateway.wolaidai.com</stringProp>
+        <stringProp name="HTTPSampler.port">38807</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="我来贷用户" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1488960327000</longProp>
+        <longProp name="ThreadGroup.end_time">1488960327000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="登陆\注册" enabled="true"/>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-App-Version</stringProp>
+                <stringProp name="Header.value">${X-App-Version}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-Source-Id</stringProp>
+                <stringProp name="Header.value">${X-Source-Id}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="获取登陆OTP" enabled="true">
+            <stringProp name="dataSource">Pool1</stringProp>
+            <stringProp name="query">INSERT INTO &quot;public&quot;.&quot;messages&quot; (&quot;messagable_id&quot;, &quot;messagable_type&quot;, &quot;format&quot;, &quot;otp&quot;, &quot;expired_at&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;is_valid&quot;, &quot;mobile&quot;) VALUES (NULL, NULL, &apos;mobile_verification_sms&apos;, &apos;888888&apos;, now() + &apos;1 day&apos;, now(), now(), &apos;t&apos;, ?);</stringProp>
+            <stringProp name="queryArguments">${mobile}</stringProp>
+            <stringProp name="queryArgumentsTypes">VARCHAR</stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="queryType">Prepared Update Statement</stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+            <stringProp name="resultVariable"></stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <stringProp name="TestPlan.comments">Postgres Request</stringProp>
+          </JDBCSampler>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="登陆/注册" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;mobile&quot;:&quot;${mobile}&quot;,&quot;otp&quot;:&quot;888888&quot;,&quot;origin&quot;:&quot;official&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/jrocket2/api/v2/sessions</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell断言" enabled="true">
+              <stringProp name="BeanShellAssertion.query">if (ResponseCode != null &amp;&amp; ResponseCode.equals (&quot;200&quot;) == false )
+{
+// this is standard stuff
+Failure=true ;
+FailureMessage =&quot;Response code was not a 200 response code it was &quot; + ResponseCode + &quot;.&quot; ;
+print ( &quot;the return code is &quot; + ResponseCode);   // this goes to stdout
+log.warn( &quot;the return code is &quot; + ResponseCode); // this goes to the JMeter log file
+}
+
+</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="TOKEN提取器" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">TOKEN</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.X-User-Token</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="选择角色(工薪)" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;roleType&quot;:2}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/jrocket2/api/v3/user/role_type</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="TestPlan.comments">role_type</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">X-User-Mobile</stringProp>
+                  <stringProp name="Header.value">${mobile}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">X-User-Token</stringProp>
+                  <stringProp name="Header.value">${TOKEN}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="提交资料" enabled="true"/>
+        <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="个人信息及工作单位" enabled="true"/>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">X-App-Version</stringProp>
+                  <stringProp name="Header.value">${X-App-Version}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">X-Source-Id</stringProp>
+                  <stringProp name="Header.value">${X-Source-Id}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">X-User-Token</stringProp>
+                  <stringProp name="Header.value">${TOKEN}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">X-User-Mobile</stringProp>
+                  <stringProp name="Header.value">${mobile}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="个人信息" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;cnid&quot;:&quot;${__IdCardGenerator()}&quot;,&quot;degree_id&quot;:&quot;6&quot;,&quot;position_id&quot;:&quot;1000&quot;,&quot;marriage&quot;:0,&quot;name&quot;:&quot;自动化测试&quot;,&quot;qq&quot;:&quot;3158633&quot;,&quot;resident_address_attributes&quot;:{&quot;city&quot;:&quot;110000&quot;,&quot;district&quot;:&quot;110107&quot;,&quot;province&quot;:&quot;110000&quot;}}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/jrocket2/api/v3/salariat/profile</stringProp>
+              <stringProp name="HTTPSampler.method">PUT</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="工作单位" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;categoryCode&quot;:&quot;010&quot;,&quot;city&quot;:&quot;440300&quot;,&quot;department&quot;:&quot;测试部&quot;,&quot;district&quot;:&quot;440305&quot;,&quot;entry_time&quot;:&quot;2017-01&quot;,&quot;income&quot;:10000,&quot;industryCode&quot;:&quot;01010&quot;,&quot;name&quot;:&quot;自动化测试公司&quot;,&quot;position_id&quot;:2,&quot;province&quot;:&quot;440000&quot;,&quot;street&quot;:&quot;我来贷测试部&quot;,&quot;telephone&quot;:&quot;01088888888&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/jrocket2/api/v3/companies</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="紧急联系人" enabled="true"/>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">X-User-Token</stringProp>
+                  <stringProp name="Header.value">${TOKEN}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">X-User-Mobile</stringProp>
+                  <stringProp name="Header.value">${mobile}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">X-User-Flag</stringProp>
+                  <stringProp name="Header.value">normal</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">X-Product-Code</stringProp>
+                  <stringProp name="Header.value">${X-Product-Code}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="紧急联系人(同事)" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;name&quot;:&quot;李四&quot;,&quot;relationship&quot;:&quot;colleague&quot;,&quot;mobile&quot;:&quot;13760385724&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/jrocket2/api/v2/liaisons</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="紧急联系人(父母)" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;name&quot;:&quot;阿三&quot;,&quot;relationship&quot;:&quot;parents&quot;,&quot;mobile&quot;:&quot;13760385723&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/jrocket2/api/v2/liaisons</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="拍照认证(包含工资流水上传接口)" enabled="true">
+            <stringProp name="TestPlan.comments">因为要考虑 HTTP 信息头共享</stringProp>
+          </GenericController>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="X-User-Token" elementType="Header">
+                  <stringProp name="Header.name">X-User-Token</stringProp>
+                  <stringProp name="Header.value">${TOKEN}</stringProp>
+                </elementProp>
+                <elementProp name="X-User-Flag" elementType="Header">
+                  <stringProp name="Header.name">X-User-Flag</stringProp>
+                  <stringProp name="Header.value">normal</stringProp>
+                </elementProp>
+                <elementProp name="X-User-Identity" elementType="Header">
+                  <stringProp name="Header.name">X-User-Identity</stringProp>
+                  <stringProp name="Header.value">${X-User-Identity}</stringProp>
+                </elementProp>
+                <elementProp name="X-Product-Code" elementType="Header">
+                  <stringProp name="Header.name">X-Product-Code</stringProp>
+                  <stringProp name="Header.value">${X-Product-Code}</stringProp>
+                </elementProp>
+                <elementProp name="X-Source-Id" elementType="Header">
+                  <stringProp name="Header.name">X-Source-Id</stringProp>
+                  <stringProp name="Header.value">${X-Source-Id}</stringProp>
+                </elementProp>
+                <elementProp name="X-Origin" elementType="Header">
+                  <stringProp name="Header.name">X-Origin</stringProp>
+                  <stringProp name="Header.value">official</stringProp>
+                </elementProp>
+                <elementProp name="X-User-Mobile" elementType="Header">
+                  <stringProp name="Header.name">X-User-Mobile</stringProp>
+                  <stringProp name="Header.value">${mobile}</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip</stringProp>
+                </elementProp>
+                <elementProp name="X-App-Version" elementType="Header">
+                  <stringProp name="Header.name">X-App-Version</stringProp>
+                  <stringProp name="Header.value">${X-App-Version}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="手持身份证" enabled="true">
+              <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+                <collectionProp name="HTTPFileArgs.files">
+                  <elementProp name="${picture}" elementType="HTTPFileArg">
+                    <stringProp name="File.path">${picture}</stringProp>
+                    <stringProp name="File.paramname">resource</stringProp>
+                    <stringProp name="File.mimetype">image/png</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="doc_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">id_handheld_proof</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">doc_type</stringProp>
+                  </elementProp>
+                  <elementProp name="index" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">index</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">${path_v3_documents}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+              <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="TestPlan.comments">id_handheld_proof</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="脸部识别" enabled="true">
+              <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+                <collectionProp name="HTTPFileArgs.files">
+                  <elementProp name="${picture}" elementType="HTTPFileArg">
+                    <stringProp name="File.path">${picture}</stringProp>
+                    <stringProp name="File.paramname">resource</stringProp>
+                    <stringProp name="File.mimetype">image/png</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="doc_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">face_recognition_proof</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">doc_type</stringProp>
+                  </elementProp>
+                  <elementProp name="index" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">index</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">${path_v3_documents}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+              <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="TestPlan.comments">face_recognition_proof</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="身份证正面" enabled="true">
+              <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+                <collectionProp name="HTTPFileArgs.files">
+                  <elementProp name="${picture}" elementType="HTTPFileArg">
+                    <stringProp name="File.path">${picture}</stringProp>
+                    <stringProp name="File.paramname">resource</stringProp>
+                    <stringProp name="File.mimetype">image/png</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="doc_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">id_front_proof</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">doc_type</stringProp>
+                  </elementProp>
+                  <elementProp name="index" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">index</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">${path_v3_documents}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+              <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="身份证反面" enabled="true">
+              <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+                <collectionProp name="HTTPFileArgs.files">
+                  <elementProp name="${picture}" elementType="HTTPFileArg">
+                    <stringProp name="File.path">${picture}</stringProp>
+                    <stringProp name="File.paramname">resource</stringProp>
+                    <stringProp name="File.mimetype">image/png</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="doc_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">id_back_proof</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">doc_type</stringProp>
+                  </elementProp>
+                  <elementProp name="index" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">index</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">${path_v3_documents}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+              <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="工作证明" enabled="true">
+              <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+                <collectionProp name="HTTPFileArgs.files">
+                  <elementProp name="${picture}" elementType="HTTPFileArg">
+                    <stringProp name="File.path">${picture}</stringProp>
+                    <stringProp name="File.paramname">resource</stringProp>
+                    <stringProp name="File.mimetype">image/png</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="doc_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">employment_proof</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">doc_type</stringProp>
+                  </elementProp>
+                  <elementProp name="index" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">index</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">${path_v3_documents}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+              <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="收入信息" enabled="true">
+              <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+                <collectionProp name="HTTPFileArgs.files">
+                  <elementProp name="${picture}" elementType="HTTPFileArg">
+                    <stringProp name="File.path">${picture}</stringProp>
+                    <stringProp name="File.paramname">resource</stringProp>
+                    <stringProp name="File.mimetype">image/png</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="doc_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">bank_card_transaction_flow_proof</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">doc_type</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">${path_v3_documents}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+              <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="信用信息" enabled="true"/>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="授权信息" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="account" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${mobile}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">account</stringProp>
+                  </elementProp>
+                  <elementProp name="authItem" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">creditcard</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">authItem</stringProp>
+                  </elementProp>
+                  <elementProp name="operation" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">add</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">operation</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${server_wedefend}</stringProp>
+              <stringProp name="HTTPSampler.port">${port_wedefend}</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/tools/testauth</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="TestPlan.comments">通过wedefend提供的接口跳过這步骤</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="提交贷款申请" enabled="true"/>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-App-Version</stringProp>
+                <stringProp name="Header.value">${X-App-Version}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-Source-Id</stringProp>
+                <stringProp name="Header.value">${X-Source-Id}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-User-Token</stringProp>
+                <stringProp name="Header.value">${TOKEN}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-User-Mobile</stringProp>
+                <stringProp name="Header.value">${mobile}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-Product-Code</stringProp>
+                <stringProp name="Header.value">${X-Product-Code}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取提交贷款otp" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/jrocket2/api/v3/loan_applications/credit_auth/send_otp</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="JDBC PostProcessor" enabled="true">
+              <stringProp name="dataSource">pool2</stringProp>
+              <stringProp name="queryType">Prepared Select Statement</stringProp>
+              <stringProp name="query">SELECT code from credit_report_challenge_code where mobile = ? order by id desc limit 1</stringProp>
+              <stringProp name="queryArguments">${mobile}</stringProp>
+              <stringProp name="queryArgumentsTypes">VARCHAR</stringProp>
+              <stringProp name="variableNames">Code</stringProp>
+              <stringProp name="resultVariable"></stringProp>
+              <stringProp name="queryTimeout"></stringProp>
+              <stringProp name="resultSetHandler">Store as String</stringProp>
+            </JDBCPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="提交贷款申请" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;origin&quot;:&quot;official&quot;,&quot;tenor&quot;:&quot;12M&quot;,&quot;amount&quot;:&quot;4000&quot;,&quot;otp_code&quot;:&quot;${Code_1}&quot;,&quot;device_info&quot;:{&quot;model&quot;:&quot;OPPO R9tm&quot;,&quot;os_version&quot;:&quot;5.1&quot;,&quot;uuid&quot;:&quot;861916034955398&quot;,&quot;gps&quot;:&quot;22.512856,113.937258&quot;,&quot;contact_count&quot;:0,&quot;ip&quot;:&quot;172.30.7.150\n&quot;,&quot;mac&quot;:&quot;1c:77:f6:b5:de:f3&quot;,&quot;fm&quot;:&quot;eyJvcyI6ImFuZHJvaWQiLCJ2ZXJzaW9uIjoiMy4wLjMiLCJwYWNrYWdlcyI6ImNvLndlbGFiLndvbGFpZGFpXzQuMyIsInByb2ZpbGVfdGltZSI6Njg0NSwiZXJyb3JfaW5pdCI6eyJlcnJvcl9jb2RlIjoiWzAxMiwgMDExXSIsImVycm9yX21zZyI6Ilt7bWVzc2FnZTpjbi50b25nZHVuLmFuZHJvaWQuY29yZS5jLmEuYShUb25nRHVuOjcyKSxjYXVzZWQ6amF2YS5uZXQuU29ja2V0VGltZW91dEV4Y2VwdGlvbjogUmVhZCB0aW1lZCBvdXR9XSIsImRldmljZSI6Ik9QUE9eXk9QUE8gUjl0bV5eMjJeXjQ1OWJlMzY5MzdjNDYwOGJkZDVmNGQxYjAwYTNiMTdlXl5bYXJtNjQtdjhhLCBhcm1lYWJpLXY3YSwgYXJtZWFiaV1eXmFybWVhYmkifSwiZGF0YSI6ImkyVkdvNFoyRUZRQndxeUxcL2N1b2xRM2V1c2Y4QXRINzNVak5pdzd0K0wzazI3amE2QXF1blBzUTY0QUw5dEZVRzVpRGlac0I2eVAxXG5CMit1VFo2NVJheDhrUG1NNExjRGE0cjh5UEFDWDVMMEg0dVwvc3B4TkpDcUg4TmZnQ09iS2tYUCtkcFV2MWZ0VGZucElObHlmcG9xZ1xuM0tUSkN4QmhrWldNT2xGZjdqWTF3TFNxbytFN1BoZ2V1U2dzSDAzUnBGenhZSmRGd1ZNYzUyaXB5WmxmXC9jTTJoVitzVEZWMm40aVdcbmJhTjNqOTltXC9kVFFXXC9RaVlDZmJmbStIVDJBU25RS2hrSFlCTCtMZnp1XC9BUXcyUCtFMjV1aHZqeEhic1lLTkQyemM3XC81R3IyWnBhXG5EZHh4MXg1VFF1TjdpM2VjczhzaFZjU1BmQWJtazBpbnQyRjV3Um5wNmtNdUxTNlZpY25LdWpVSVJjUFpXVXk4T2ZseWJraGVaYUwyXG5INjdKajNIWlwvaHBcL2l2eVIwS1ZZcEd3d3BtY3p3YVhpYkZqSVRjRzE3c3AzdERMZUhVSnhzRTQwYWNWOFpqNnI5elwvaVkxUkZjamREXG5xWjJpYWc3Q2ZpRlVWTGNJK0hXT1ZWcGpXaVZQdm5LMkI4cXlCWFg3WEdZMTFIZndFcXlDZ3E4aU51RCt5am1pSUUwZzFnYURRNFdaXG5waWJtKzBzOWNmS1FaaWszM0VRbXg0VzBDN28wQjY4T1U4clZyQ25zWlZMSXRVMlphU1lHQ0FTTW1land2Zzh6MnBJWEs3S3FXWEtOXG5XWURDNWFPcHJsNGtWVjJVTmFINHc2TFRSVHhEVE02UUpsTUdBRTAzakZXVE1QdFpxdFl5bHBLcEdDYzNseWhoZXpWbllmeWRUS3pMXG5iN0Q0T09DNm5USk90TG1OOTZRVEJ4WEZTU0RLQUdNaGRvdkllRnZFWURkcEhHazcrcWs3VHg3Qlg1cEF1R2pHSUNCU1JTM2dcL1VDbFxuZkR5RHBwQVAraUtVQTFjWHArVFZHMlExQ1J3ZGFuN3JBdmpCZEFLUmRhakV2R05lYmp6bmNrdCtEUDQ5ZVlzeis4bDM3ZURyOTk3TVxuQkZYaTRPVEFsNHh1UFdZT0c3TlR3MnpRdGdQUGRERktJVFN2OVRxRkxVWGpUemRQZVhQUm1wNkx1MGVnTXNXNDdcL0lvOVphVXdNXC9jXG5nbDY0MkVXZkZFYmNUeTlnbExWelk4M09IbGJnckhNK2Z5c0IrXC8wTm51XC9PZXNDQzBUN255Tk1ncFpIMzU3bElONVwvSDRWMFZLQStiXG5EeU5RRDhcL1lNVUx5VGpiQkZxUU94UExFaHNnQkVqY2xwNmNHREdcL3NzMU5mXC9nb0N0TTF2dmlyM2w2N0ZLOFprdmhZdXg3NEpuVFlVXG5kcWMydWViZkZGY0d1Mkx0c1FFcEZrRHc4bUxJTHY2Zmg4VjVsb3o3eFI0QWpqc0F6QVwvTytIWmlZZllNdkVXUUVpMVFNSHY5NXBtN1xuKzF3b1V3TlRRNWdYeU0wc1B4cW1zR2ExRnBTSTJvU3dwbllhXC9IU09lQ050elprV2xmUjU0dEVTUW1BSnFVbWpSa3JLaXE1eGdmc3JcbjZSbFltamUrZ1wvaGswQmJHMUtLMDBDUlU1MGhuYndZN29tTDlXTTlYUjEwem9rOTBNWXJ1WGtnK1RuamtcL2d4aDVZVzFnNXhUXC9IbzFcbjVoTDkzWkVRTGZWMlIzbmw4WGs4ek1wWVlnQWl6WSt2eERnVlQ0ZU5LTWdVdGp1SGM0V2pFWmZtTXNXdXZDYmZSZ0o4T1ZhUURBenlcblJ1YUEyWGYyM0hNbTgwSlluZ09rdU1iVW1QZzFlcFhDZ2dkdERQY2tMQmtReTFRTHNXMGhjbDRSSUhLVmhMR3lxYTNtXC9JYlwvOTIrYVxuNUlLTmZsYjNWUTFOcGNkRzhGYXhYRG9EYzZsbk5tSThHSFJWVXdYOStVMDU2RHRlTWNCXC9PaGNwVHZETDQ0dGQ0c0FvcDBDV2x3YmZcbmYrTGdzM0pyMUNJK1lHNWMwYW5paEJHOGxvRUVQUm03d0tHQzJ1TUlURmxWQXdLTnNrcHo0OUhzTkZoYXlrSmMwSFwvTlJzN1ZNcXhmXG5ZVGxIR2dcL0JjaHVyejRuRWFRQ0VVUHJ0anBwd0UxS0xrWUpMSytFSTBGaCtUYzdJU1BPUEtjaU53RjZqWXJ3bmNTK2ZWbGpBaHBUWVxuNnBIKzJOMUt0dEFoaVhhM3VmZjl3U1UyaUxuWEZMTStqUjBIckFnbkNzanV4S3E3cXNWVnpGN3hDTGtFNWZVUnRWemc2b2U5dTh2Q1xuenRrUmIwVld0eXdrRFBKMDBLc0VNVWIyNkl4bjVJQTRMc0w5SXB2TlduNU0wM1E4UVFWTHRIajRNUjE4MFVac0RMQnlYM1lDWkxIZVxuOG9QakF4XC90dnVNbEd6aUlpYlM0akxHM2ljZW5EZW5lUU5VRzc5Mkg5UStvUXFDMHlFN3pWVU5JWWJvY2psU21LT1ZVMnRsNklNNTVcbmttWE5lT2tEUloxZGVkRG4yZHN1dlwvTzVvcjlZem9EQTUzUGpoQ0toam5sbGJ1dGwxdUdHK2laMHY2OUU0Mm9TdDgzQm9kc3lSbXQ5XG5YVTlDOHNDSGJDTmxRb1J5OVBIWFpuUzMxMENibHp2TXNDNkZjQ1AxaE1oWWZEdHVLdThyN3VSWEhPQkdTSGRhR2NFMks2TGVUM3FyXG4yYWF3ZXhDamd0SXhxMDNRbTN5Z1ZHYXdhTkFmeWM4clJXVWhZbDhhSVBTbTBXbTF4dWlqOExVOER3VlE3Tndzd3FCbnpJZEVaVUJiXG56NWlnTTZKaWozTlwvUG5KOEVHeFphc0xWek1Pc2hpckR0K3JxQWhub2UrUUdPdXU3ZUl1ZXprREo5T3J1cEtWalV6RjNGa1k4NEtWV1xuU1ZoOUpxZjFSR0JxMVM4NHRRNk9nK3hxK2lpcStkN0JSOFNPd2VGcGZoNlZwZkNEQldiRGZGdkJIVjNyRDJWeThkMlRxYXVNTkVVbFxuaFwvbG1zV0Z1Q0ptbU1SVlJ6WGRnT3dlSEpkaDllSlA4Tlh4WjdXdzF0SW9nK3VRVDJkTnNVSk5ZUnp0SHZBbXlsU2Q0UW56Q2ZpWjZcblpyaUxpUmQza1crSVRwOVM1bFc0U3JCRFduNkNGZ1FIY0w0MkxXZFVUeTEyYkxlUENCcENuMU9LV0xMRWVXYUE4UDR5RGdlUldJWnNcbldyeFdkekZJTEJmd2szXC94OUdvM1RKRVhvd2xLVmpQeXZGZGxIQWM3cjQwRDZrZHpkU0Y0MUd3SU1jSFpQT1JQbE41aUZTM1VaMVpRXG55QXBFUUhvVWJHaGFuWVZjUDdGSUpidUhOdWRNRmZmNGRYdHQ2OEsrTGlrN3V4Z2FOMmNnN2RHQllSb1M3TmhoUmxNaGtlUEJGSHBIXG5tU3QrQXJEa3QxcGVNbEVvOEh5Y1IyME9XV3dXYWdWZzRQQ3hkWUVHeEZ4UVViVGVPbTJjaFVrZWtPYkwyU1hXYlwvTjZtZ0JVaU5VTFxuaFdjMWNYZ0RkSUQra095TjhScVQ2NEErVzVGYXJjbVwvNDE0TEE0NFNmdHUyUHRRNGRUeTUzRUcyWDZJbm8rU1JTQVhFUXZzWHpzMDdcbnBvMVhBVjN0QllrQ3IwbVRkRHBGMTIwT2I4RlZxQWRpTit2VGwwUG8xMXN4NVdWQ2VzYTdQTEo1ajBSeElGN01hcWsrdm8rYnpuMVVcbklGazBncUhcLzhsXC9IK2pJM2lIY3JcL1hXK1lYWUYwMnVHWlZEaFBzQzIxdFJYWkVUZ1VWZlhpMUFsa1FPalwveEwxTEQ2UGE5a1VLdTZCXG55N0NkZnpuaGwzMGFJT0ZZdlwveVVzeUlxWDZ4dTlGd3NpdEV1ZllpS1R0Um1MVzlGd0ltdVk3SlVUeFZjd1BBTlRnaGQyc3JnT3hueVxudE1UMUd4bXp2YkdiWG9mS1JKRlVQUXJoeEp2akV5M3BwakczUHpFRjhab0JldlEralNySVhaZ2J6MjJDd3o3ZDkzbnE2OGdQMUd0Z1xua3ZXN2FXNWNuY3BUQVpZVlZyUlwveVdqclNhbU9RUjVGVmRZY2I1NVhtckc2czg2bXd2UEpBK1lhXC96VVA2RHNvMFhtWnB4cGdueEFsXG5MVnlzdEpCekVtaFhVT1NQd3pLenRrd3VuUFVmbmdEQ2Nla1FSdWN1czBRV2hcL3kydGtRZXFjQlg1VkU4XC8yVG0yTnVNcW0rT0d4OXBcbk9rQkZ2aWFqWU9mTkFOY05HZ2Z5N3lVTVlPZjNBMlVMQXIyTWdxbHd4dlhWY3lMaER6d1l5OUlwMUxIb3BhWWNFVXl6SDJpcUF2aHdcbktpM2xKOEk0RFVyS1pmeDU5VDRYS3B2TXNVdWQ5SUNGUTNGMmwrN25aS005SXJCS1ZJVkoycFBPeGk0K1gwajRsUEorTmZcL0ZrT214XG4ycTBPeVJMRWhqMTdsUUhFaUVZREJkK0I3bENadkpIUWJLeHVORWp0cW1ENms5ZXRSM3RhTUVHUGM0YmhMQTZpWmJlSnlWWkR1S1JyXG5LUHdvcDU1Q3ZQekdEM1JIZjhzMnErekFSWVJPQ0t6R1lNVHFESzBxZkpXTUhrNXp5Q01saldSbUlkRTFKNjlsTjUyT3RPWG5QTFNsXG5PZXdqQVh3b3h3bFwvSlVLVDdmZFpJbUtGcXNMQ2JxMmZOMk5ESDVZUUN6aXlBVCtxdldLOFljSnNJNitKRFwvMnRPTVVGVWJUZ2tQUzRcblZVZ3VkYlJaWkdcL05yQXoxVDdPY1J6eWN4ejI4UWw4ZmJQOUV1TnNNaytqSU85UFI5dUIyeXI3MU5hVVdQSTNxUDVSck1lR2U0NldCXG5nQzNXd09aaldjUjVIdFwvUXRoTnAxUTVaRldsSVFcL2IxbVp5T0h3YSs0UGxjNzBEclVOK2k2bFI1Sm1pckJNNzlCejZaaGtSZ0x5elZcbmZVNW0zWEU2Rmt1cmZmb1k1ZDNPa3ZVM2tXQnJlZlB6V0ZSbmdTRFlOejRFcFNvNW1NWmFnMDRTYVNcL21VM1djWWFjYWVqeTB5SlVlXG5Oem1HZ2JiSVEyMCtaQWgwSThvbk1ySTRlMFB3UlJBU21vcWxQSzFBNDY2SnA1ZG1jQ1ZqMG5JNloyR0thRVhsbFUyMk1hVmJvMWswXG5uajBNaGkxRGQrYjJxUUZNQ3ZkdlRidG9wMGo2bFpDXC9vSmlnakt0VlNhVlpnMmFVWEtnMlhwMjBwMjlka0REcE5MYjhoUTVzaDlBOVxuN1VTZnZjbjdwVTV4aGVrbzdUejA3UG1vVE9zbmw0RTY1Z1JrOVA5SFwvUW9lVEJEeHRoanN4dmlIa1RLaG5xTTlRZ0syS3RQZ05WT2JcbmJvanZNc29ocDJrV0RwVnVsTktXSXVZVVY1TzVvcTRZMjIzMUFyVWQrTkFhRWt0UGt4eW1yRGFPXC9PYWlwc2JYY2VER0s5ZjdYYVZYXG5nVGNMdWk5aFwvdWpjbDRmdkFqdTlrbjJZMlwvVHNoXC80NXJWRWo4QlFYXC9BaVBuTmloSVZjTWkzeXJic0czVG5XVHZ0VjNXeVN5OEorYVxuVng1RVFRemt0MHZBTnRVQW9mNmUwdTZ0T1ZXTFlGZ0Rid2lDVzkxRUtaVTRHYVByS2IremdoN253M0lEQlNIOWF5UGVQXC94OFIyeitcbitpSGJWT1B2RlBkNGNldUFIdEZEbzJmWWcyWEtGREhVbU0wVWNZYXJqWk9NU3RtR01Ycm5xSUgrbTUyZ2FNUWNHK1lTZGg2QjBXTCtcbmJtN1A5MFJ6KytsbnJtMW16aXNuM0NZcWlBcnRSeTY4WEZ3RzZ4MGNrc3pKYWczTXVzT2dUU0o4VHltSzZjdWkwYllHdzBwVXVDK1NcbiJ9&quot;,&quot;source_id&quot;:1,&quot;wdid&quot;:&quot;49996fa5d37d465bdd4637116b4c45c9&quot;}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/jrocket2/api/v3/loan_applications</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="额度用户" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1489031910000</longProp>
+        <longProp name="ThreadGroup.end_time">1489031910000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree/>
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="tearDown Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1488964785000</longProp>
+        <longProp name="ThreadGroup.end_time">1488964785000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </PostThreadGroup>
+      <hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="删除OTP" enabled="true">
+          <stringProp name="dataSource">Pool1</stringProp>
+          <stringProp name="query">DELETE FROM messages WHERE mobile = ?</stringProp>
+          <stringProp name="queryArguments">${mobile}</stringProp>
+          <stringProp name="queryArgumentsTypes">VARCHAR</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Prepared Update Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="TestPlan.comments">postgres sql</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
